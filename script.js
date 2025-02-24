@@ -54,7 +54,7 @@
 // console.log("Value of Greet : ", greet("Hashan"));
 // console.log("Type of Greet : ", typeof greet);
 
-// After ES6
+// After ES6 (Arrow function)
 // const greet2 = (name) => {
 //   return `Hello, ${name}`;
 // };
@@ -98,6 +98,41 @@
 // TODO: Later
 // console.log(math(100, 50));
 
-const mainTitle = document?.querySelector("#main-title");
+const startTime = performance.now();
 
-console.log(mainTitle);
+// console.log("I'm here before DOM Load!");
+
+// Setting an item to the local storage
+// localStorage.setItem("username", "hashanshalitha");
+
+// Setting an item to the local storage
+// sessionStorage.setItem("email", "shalithadev@gmail.com");
+
+// Event listener
+document.addEventListener("DOMContentLoaded", (event) => {
+  const endTime = performance.now();
+  //   const loadTime = (endTime - startTime).toFixed(2); // Calculate time in milliseconds
+
+  //   console.log("DOM fully loaded and parsed");
+  //   console.log(`DOM load time: ${loadTime} ms`);
+
+  const mainTitle = document.querySelector("#main-title");
+  // console.log(mainTitle);
+  const mainButton = document.querySelector("#main-button");
+  //   console.log(mainButton);
+
+  // Bind click event to the main button
+  mainButton.addEventListener("click", () => {
+    // Change the main title
+    mainTitle.textContent = "I'm the Changed Title!";
+
+    // setTimeout(() => {
+    //   window.location.reload(true);
+    // }, 200);
+  });
+});
+
+// console.log("I'm here after DOM Load!");
+
+console.log("Username is : ", localStorage.getItem("username"));
+console.log("Email is : ", sessionStorage.getItem("email"));
